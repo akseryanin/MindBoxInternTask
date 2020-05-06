@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using MindBoxSquareTask;
 using MindBoxSquareTask.Entities;
-using Xunit.Sdk;
 using Xunit;
 
 namespace UnitTestMindbox
@@ -46,6 +45,14 @@ namespace UnitTestMindbox
             Figure f2 = new Figure(new Point[] { a, b });
             Assert.Equal(0, f1.Square(), 2);
             Assert.Equal(0, f2.Square(), 2);
+        }
+        [Fact]
+        public void IsRectangle()
+        {
+            Triangle t = new Triangle(pointsTriangle);
+            Triangle t1 = new Triangle(1, 1, Math.Sqrt(3));
+            Assert.True(t.IsRegtangle);
+            Assert.False(t1.IsRegtangle);
         }
     }
 }

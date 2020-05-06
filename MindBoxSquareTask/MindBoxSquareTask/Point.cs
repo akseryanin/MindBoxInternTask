@@ -22,5 +22,15 @@ namespace MindBoxSquareTask
         {
             return a.X * b.Y - a.Y * b.X;
         }
+
+        /// <summary>
+        /// Расстояние между точками
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public double distance(Point b)
+        {
+            return Math.Sqrt(Math.Pow(X - b.X, 2) + Math.Pow(Y - b.Y, 2));
+        }
     }
 }

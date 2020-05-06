@@ -1,7 +1,5 @@
 ﻿using MindBoxSquareTask.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MindBoxSquareTask.Entities
 {
@@ -29,7 +27,7 @@ namespace MindBoxSquareTask.Entities
         /// Применяем хитрую формулу для вычисления площади многоугольника
         /// </summary>
         /// <returns></returns>
-        public virtual double Square()
+        public virtual double Square() // Пункт "Вычисление площади фигуры без знания типа фигуры" я понял как вычисление площади многоугольника составленного из этих точек
         {
             double square = 0;
             for (int i = 0; i < Demision; ++i)

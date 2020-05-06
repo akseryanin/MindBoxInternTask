@@ -1,13 +1,24 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MindBoxSquareTask.Entities
 {
     public class Triangle : Figure
     {
         private double[] distances;
+
+        /// <summary>
+        /// Проверка на прямоугольность
+        /// </summary>
+        public bool IsRegtangle
+        {
+            get
+            {
+                return Math.Abs(Math.Pow(distances[0], 2) + Math.Pow(distances[1], 2) - Math.Pow(distances[2], 2)) < 1e-9 ||
+                    Math.Abs(Math.Pow(distances[0], 2) + Math.Pow(distances[2], 2) - Math.Pow(distances[1], 2)) < 1e-9 ||
+                    Math.Abs(Math.Pow(distances[2], 2) + Math.Pow(distances[1], 2) - Math.Pow(distances[0], 2)) < 1e-9; //doubles equal.....
+            }
+        }
         /// <summary>
         /// Будем строить треугольник по трем точкам
         /// </summary>
@@ -16,6 +27,7 @@ namespace MindBoxSquareTask.Entities
         {
             if (Demision != 3)
                 throw new ArgumentException($"Треугольник должен состоять из трех точек, а передано {Demision} точек");
+            distances = new double[] { points[0].distance(points[1]), points[0].distance(points[2]), points[1].distance(points[2]) };
         }
         /// <summary>
         /// Строим треугольник по трем сторонам

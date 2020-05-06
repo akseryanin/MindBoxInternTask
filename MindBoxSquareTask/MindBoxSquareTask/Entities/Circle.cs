@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 
 namespace MindBoxSquareTask.Entities
 {
@@ -15,6 +12,10 @@ namespace MindBoxSquareTask.Entities
             Radius = r;
             Center = centr;
         }
+        /// <summary>
+        /// Пплощадь круга
+        /// </summary>
+        /// <returns></returns>
         public override double Square()
         {
             return Math.PI * Math.Pow(Radius, 2);
