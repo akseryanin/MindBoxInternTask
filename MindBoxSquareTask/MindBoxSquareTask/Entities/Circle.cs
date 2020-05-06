@@ -9,10 +9,7 @@ namespace MindBoxSquareTask.Entities
     {
         public Point Center;
         public double Radius { get; }
-        public Circle(Point[] points) : base(points)
-        {
-            throw new ArgumentException("Круг задается одной точкой и радиусом!");
-        }
+
         public Circle(Point centr, double r) : base(new Point[] { centr })
         {
             Radius = r;

@@ -1,9 +1,9 @@
 using System;
-using Xunit;
 using System.Linq;
 using MindBoxSquareTask;
 using MindBoxSquareTask.Entities;
 using Xunit.Sdk;
+using Xunit;
 
 namespace UnitTestMindbox
 {
@@ -20,32 +20,32 @@ namespace UnitTestMindbox
         public void TriangleSquareSimple()
         {
             Triangle t = new Triangle(pointsTriangle);
-            Assert.Equal(0.5, t.Square());
+            Triangle t1 = new Triangle(1, 1, Math.Sqrt(2));
+            Assert.Equal(0.5, t.Square(), 2);
+            Assert.Equal(0.5, t1.Square(), 2);
         }
         [Fact]
         public void FigureSquareSimple()
         {
             Figure f = new Figure(points);
-            Assert.Equal(1, f.Square());
+            Assert.Equal(1, f.Square(), 2);
         }
         [Fact]
         public void CircleSquareSimple()
         {
-
-            Circle c;
-            Exception exc = null;
-            try
-            {
-                c = new Circle(points);
-            }
-            catch (ArgumentException e)
-            {
-                exc = e;
-            }
-            Assert.NotNull(exc);
             Point centr = new Point(2, 2);
-            c = new Circle(centr, 2);
-            Assert.Equal(Math.PI * 4, c.Square());
+            Circle c = new Circle(centr, 2);
+            Assert.Equal(Math.PI * 4, c.Square(), 2);
+        }
+        [Fact]
+        public void DegenerateFigureOneLineSquare()
+        {
+            Point a = new Point(0, 0);
+            Point b = new Point(0, 10);
+            Figure f1 = new Figure(new Point[] { a });
+            Figure f2 = new Figure(new Point[] { a, b });
+            Assert.Equal(0, f1.Square(), 2);
+            Assert.Equal(0, f2.Square(), 2);
         }
     }
 }

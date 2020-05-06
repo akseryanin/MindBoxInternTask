@@ -8,7 +8,10 @@ namespace MindBoxSquareTask.Entities
     public class Figure : IFigure
     {
 
-
+        /// <summary>
+        /// Строим фигуру по n точкам в правильном порядке обхода
+        /// </summary>
+        /// <param name="points"></param>
         public Figure(Point[] points)
         {
             Points = points;
@@ -22,6 +25,10 @@ namespace MindBoxSquareTask.Entities
 
         public int Demision { get; }
 
+        /// <summary>
+        /// Применяем хитрую формулу для вычисления площади многоугольника
+        /// </summary>
+        /// <returns></returns>
         public virtual double Square()
         {
             double square = 0;
