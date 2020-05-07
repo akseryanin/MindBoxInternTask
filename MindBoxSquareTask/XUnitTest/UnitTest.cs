@@ -8,7 +8,7 @@ namespace UnitTestMindbox
 {
     public class UnitTests
     {
-        private readonly Point[] points;
+        private readonly Point[] points;//
         private readonly Point[] pointsTriangle;
         public UnitTests()
         {

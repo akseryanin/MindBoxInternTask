@@ -14,9 +14,7 @@ namespace MindBoxSquareTask.Entities
         {
             get
             {
-                return Math.Abs(Math.Pow(distances[0], 2) + Math.Pow(distances[1], 2) - Math.Pow(distances[2], 2)) < 1e-9 ||
-                    Math.Abs(Math.Pow(distances[0], 2) + Math.Pow(distances[2], 2) - Math.Pow(distances[1], 2)) < 1e-9 ||
-                    Math.Abs(Math.Pow(distances[2], 2) + Math.Pow(distances[1], 2) - Math.Pow(distances[0], 2)) < 1e-9; //doubles equal.....
+                return Math.Abs(Math.Pow(distances[0], 2) + Math.Pow(distances[1], 2) - Math.Pow(distances[2], 2)) < 1e-9; //double equal....
             }
         }
         /// <summary>
@@ -39,7 +37,7 @@ namespace MindBoxSquareTask.Entities
         {
             if (a + b <= c || a + c <= b || b + c <= a)
                 throw new ArgumentException("Переданные стороны не соответсвуют неравенству треугольника");
-            distances = new double[] { a, b, c };
+            distances = new double[] { a, b, c }.OrderBy(x => x).ToArray();
         }
         /// <summary>
         /// Вычисляем площадь треугольника, если он построен по трем сторонам применяем другую формулу

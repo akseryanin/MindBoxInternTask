@@ -6,7 +6,7 @@ namespace MindBoxSquareTask.Interfaces
 {
     interface IFigure
     {
-        public int Demision { get; }
+        public int Demision { get; }//
         public Point[] Points { get; }
         public abstract double Square();
 

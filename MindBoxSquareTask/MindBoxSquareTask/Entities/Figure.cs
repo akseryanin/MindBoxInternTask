@@ -5,7 +5,7 @@ namespace MindBoxSquareTask.Entities
 {
     public class Figure : IFigure
     {
-
+        //
         /// <summary>
         /// Строим фигуру по n точкам в правильном порядке обхода
         /// </summary>

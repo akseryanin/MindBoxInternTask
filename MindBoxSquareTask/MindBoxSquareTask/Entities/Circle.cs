@@ -4,6 +4,7 @@ namespace MindBoxSquareTask.Entities
 {
     public class Circle : Figure
     {
+        //
         public Point Center;
         public double Radius { get; }
 
